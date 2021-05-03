@@ -30,7 +30,7 @@ const Logout = () => {
 
     return (
         <>
-           <h1>Logout ka page</h1> 
+           <h1>Logout page</h1> 
         </>
     )
 }

@@ -5,7 +5,7 @@ import signpic from "../images/signup.svg";
 const Signup = () => {
     const history = useHistory();
     const [user, setUser] = useState({
-        name: "", email: "", phone: "", work: "", password: "", cpassword: ""
+        name: "", email: "", admissionno: "", branch: "", semester: "", password: "", cpassword: ""
     });
 
     let name, value;
@@ -22,7 +22,7 @@ const Signup = () => {
     const PostData = async (e) => {
         e.preventDefault();
 
-        const { name, email, phone, work, password, cpassword } = user;
+        const { name, email, admissionno, branch, semester, password, cpassword } = user;
 
         const res = await fetch("/register", {
             method: "POST",
@@ -30,7 +30,7 @@ const Signup = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name, email, phone, work, password, cpassword
+                name, email, admissionno, branch, semester, password, cpassword
             })
         });
 
@@ -55,7 +55,7 @@ const Signup = () => {
                 <div className="container mt-5">
                     <div className="signup-content">
                         <div className="signup-form">
-                            <h2 className="form-title">Sign up</h2>
+                            <h2 className="form-title">Register</h2>
                             <form method="POST" className="register-form" id="register-form">
                                 
                                 <div className="form-group">
@@ -81,24 +81,46 @@ const Signup = () => {
                                 </div>
 
                                  <div className="form-group">
-                                    <label htmlFor="phone">
-                                        <i className="zmdi zmdi-phone-in-talk material-icons-name"></i>
+                                    <label htmlFor="admissionno">
+                                        <i className="zmdi zmdi-format-list-numbered material-icons-name"></i>
                                     </label>
-                                    <input type="number" name="phone" id="phone" autoComplete="off"
-                                        value={user.phone}
+                                    <input type="text" name="admissionno" id="admissionno" autoComplete="off"
+                                        value={user.admissionno}
                                         onChange={handleInputs}
-                                        placeholder="Your Phone"
+                                        placeholder="Your Admission Number"
                                     />
                                 </div>
 
-                                 <div className="form-group">
-                                    <label htmlFor="work">
-                                        <i className="zmdi zmdi-slideshow material-icons-name"></i>
+                                <div className="form-group">
+                                    <label htmlFor="phone">
+                                        <i className="zmdi zmdi-phone material-icons-name"></i>
                                     </label>
-                                    <input type="text" name="work" id="work" autoComplete="off"
+                                    <input type="text" name="phone" id="phone" autoComplete="off"
+                                        value={user.phone}
+                                        onChange={handleInputs}
+                                        placeholder="Your Phone Number"
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="branch">
+                                        <i className="zmdi zmdi-book material-icons-name"></i>
+                                    </label>
+                                    <input type="text" name="branch" id="branch" autoComplete="off"
                                         value={user.work}
                                         onChange={handleInputs}
-                                        placeholder="Your Profession"
+                                        placeholder="Your Branch"
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="semester">
+                                        <i className="zmdi zmdi-calendar-alt material-icons-name"></i>
+                                    </label>
+                                    <input type="text" name="semester" id="semester" autoComplete="off"
+                                        value={user.work}
+                                        onChange={handleInputs}
+                                        placeholder="Your Semester"
                                     />
                                 </div>
 
@@ -138,7 +160,7 @@ const Signup = () => {
                                 <figure>
                                     <img src={signpic} alt="registration pic" />
                                 </figure>
-                                <NavLink to="/login" className="signup-image-link">I am already register</NavLink>
+                                <NavLink to="/login" className="signup-image-link">I am already registered</NavLink>
                             </div>
                        
                     </div>

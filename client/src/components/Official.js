@@ -50,7 +50,7 @@ const Login = () => {
                             </div>
                        
                         <div className="signin-form">
-                            <h2 className="form-title">Sign up</h2>
+                            <h2 className="form-title">Official Login</h2>
                             <form method="POST" className="register-form" id="register-form">
                              
 

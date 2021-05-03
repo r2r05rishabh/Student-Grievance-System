@@ -9,6 +9,7 @@ const Login = () => {
     
     const history = useHistory();
     const [email, setEmail] = useState('');
+    const [admission, setAdmission] = useState('');
     const [password, setPassword] = useState('');
 
     const loginUser = async (e) => {
@@ -21,6 +22,7 @@ const Login = () => {
             },
             body: JSON.stringify({
                 email,
+                admission,
                 password
             })
         });
@@ -50,7 +52,7 @@ const Login = () => {
                             </div>
                        
                         <div className="signin-form">
-                            <h2 className="form-title">Sign up</h2>
+                            <h2 className="form-title">Student Login</h2>
                             <form method="POST" className="register-form" id="register-form">
                              
 
@@ -62,6 +64,18 @@ const Login = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="Your Email"
+                                    />
+                                </div>
+
+
+                                <div className="form-group">
+                                    <label htmlFor="admission">
+                                        <i className="zmdi zmdi-format-list-numbered material-icons-name"></i>
+                                    </label>
+                                    <input type="admission" name="admission" id="admission" autoComplete="off"
+                                        value={email}
+                                        onChange={(e) => setAdmission(e.target.value)}
+                                        placeholder="Your Admission Number"
                                     />
                                 </div>
 
