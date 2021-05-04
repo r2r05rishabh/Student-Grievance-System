@@ -73,7 +73,7 @@ const Login = () => {
                                         <i className="zmdi zmdi-format-list-numbered material-icons-name"></i>
                                     </label>
                                     <input type="admission" name="admission" id="admission" autoComplete="off"
-                                        value={email}
+                                        value={admission}
                                         onChange={(e) => setAdmission(e.target.value)}
                                         placeholder="Your Admission Number"
                                     />
