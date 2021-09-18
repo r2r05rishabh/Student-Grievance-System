@@ -5,7 +5,7 @@ import signpic from "../images/signup.svg";
 const Signup = () => {
     const history = useHistory();
     const [user, setUser] = useState({
-        name: "", email: "", admissionno: "", branch: "", semester: "", password: "", cpassword: ""
+        name: "", email: "", admissionno: "",phone: "", branch: "", semester: "", password: "", cpassword: ""
     });
 
     let name, value;
@@ -22,7 +22,7 @@ const Signup = () => {
     const PostData = async (e) => {
         e.preventDefault();
 
-        const { name, email, admissionno, branch, semester, password, cpassword } = user;
+        const { name, email, admissionno, phone, branch, semester, password, cpassword } = user;
 
         const res = await fetch("/register", {
             method: "POST",
@@ -30,7 +30,7 @@ const Signup = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name, email, admissionno, branch, semester, password, cpassword
+                name, email, admissionno, phone, branch, semester, password, cpassword
             })
         });
 
@@ -44,7 +44,8 @@ const Signup = () => {
              window.alert(" Registration Successfull");
             console.log("Successfull Registration");
 
-            history.push("/login");
+          //  history.push("/login");
+          history.push("/Student");
         }
     }
 

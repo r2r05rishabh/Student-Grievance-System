@@ -18,7 +18,7 @@ const Logout = () => {
             credentials: "include"
         }).then((res) => {
             dispatch({ type: 'USER', payload: false });
-            history.push('/login', { replace: true });
+            history.push('/', { replace: true });
             if (res.status !== 200) {
                 const error = new Error(res.error);
                 throw error;
@@ -30,7 +30,7 @@ const Logout = () => {
 
     return (
         <>
-           <h1>Logout page</h1> 
+           <h1>Logout ka page</h1> 
         </>
     )
 }

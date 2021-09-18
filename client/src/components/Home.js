@@ -30,7 +30,6 @@ const Home = () => {
         <>
             <div className="home-page">
                 <div className="home-div">
-                    
                     <p className="pt-5">WELCOME TO CUCEK GRIEVANCE PORTAL</p>
                     <h1>{userName}</h1>
                     <h2> { show ? 'Happy, to see you back' :  'We Are Here To Help You' }</h2>

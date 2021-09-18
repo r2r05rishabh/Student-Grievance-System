@@ -11,13 +11,21 @@ const userSchema = new mongooose.Schema({
          type: String,
         required:true
     },
+    admissionno: {
+        type: String,
+       required:true
+    },
     phone: {
         type: Number,
         required:true
     },
-    work: {
+    branch: {
          type: String,
         required:true
+    },
+    semester: {
+        type: String,
+       required:true
     },
     password: {
          type: String,
